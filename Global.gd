@@ -123,8 +123,6 @@ var default_save_data = {
 	"vehicles" = Vehicles,
 }
 
-var playerName = ""
-
 var save_data = {}
 
 var SPEED = -500
@@ -134,9 +132,10 @@ var game_state = GameStates.MENU
 func save():
 	save_data.coins += current_score
 	if is_high_score():
-		save_data.high_score.append([current_score, playerName])
+		save_data.high_score.append([current_score, Time.get_date_string_from_system()])
 		save_data.high_score.sort()
 		save_data.high_score.reverse()
+		print(save_data)
 	if len(save_data.high_score) > 10:
 		save_data.high_score.pop_back()
 

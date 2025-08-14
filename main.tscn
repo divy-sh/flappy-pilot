@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8aiu77xk5vx"]
+[gd_scene load_steps=11 format=3 uid="uid://b8aiu77xk5vx"]
 
 [ext_resource type="PackedScene" uid="uid://b30323hb3ua76" path="res://plane/plane.tscn" id="1_f525f"]
 [ext_resource type="Script" path="res://main.gd" id="1_td3ms"]
-[ext_resource type="PackedScene" uid="uid://culi3om4tyr0g" path="res://ux/game_over/game_over.tscn" id="3_1u38l"]
 [ext_resource type="PackedScene" uid="uid://cvg2b2sapbl70" path="res://ux/menu/menu.tscn" id="4_pihm5"]
 [ext_resource type="PackedScene" uid="uid://8olmyge6rf8j" path="res://ux/score/score.tscn" id="5_tebrm"]
 [ext_resource type="PackedScene" uid="uid://d18ihnjuj4f3l" path="res://ux/high_score/high_score.tscn" id="6_cxh2o"]
@@ -10,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b56mf8yceglm8" path="res://ux/unlock/unlock_level.tscn" id="8_6865l"]
 [ext_resource type="PackedScene" uid="uid://dvvdwchrvsoqr" path="res://ux/unlock/unlock_plane.tscn" id="9_54eo0"]
 [ext_resource type="PackedScene" uid="uid://b8onflqa3p5wa" path="res://ux/coin_count/coin_count.tscn" id="10_gpw25"]
-[ext_resource type="PackedScene" uid="uid://ilogntt6hpn2" path="res://ux/game_over/game_over_high_score.tscn" id="11_qqc2j"]
+[ext_resource type="PackedScene" uid="uid://culi3om4tyr0g" path="res://ux/game_over/game_over.tscn" id="11_qqc2j"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_td3ms")
@@ -21,7 +20,7 @@ position = Vector2(300, 160)
 
 [node name="coin_count" parent="." instance=ExtResource("10_gpw25")]
 
-[node name="game_over" parent="." instance=ExtResource("3_1u38l")]
+[node name="game_over" parent="." instance=ExtResource("11_qqc2j")]
 visible = false
 z_index = 1
 
@@ -41,7 +40,4 @@ visible = false
 visible = false
 
 [node name="unlocks3" parent="." instance=ExtResource("9_54eo0")]
-visible = false
-
-[node name="game_over3" parent="." instance=ExtResource("11_qqc2j")]
 visible = false

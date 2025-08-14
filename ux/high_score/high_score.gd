@@ -6,12 +6,12 @@ func _ready():
 	var main_menu_button = $mainMenu
 	main_menu_button.pressed.connect(_main_menu_button_pressed)
 	var score_text = ""
-	var player_name_text = ""
+	var date = ""
 	for i in Global.save_data.high_score:
 		score_text += str(i[0]) + "\n"
-		player_name_text += str(i[1]) + "\n"
+		date += str(i[1]) + "\n"
 	$scores.text = score_text
-	$player_names.text = player_name_text
+	$player_names.text = date
 
 func _process(_delta):
 	if Global.game_state == Global.GameStates.HIGHSCORE:
