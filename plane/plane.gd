@@ -12,8 +12,8 @@ func _ready():
 func _process(_delta):
 	if Global.game_state == Global.GameStates.PLAYING:
 		self.freeze = false
-	if position.y > 1000 or position.y < -800:
-		game_over()
+		if position.y > 1200 or position.y < -800:
+			game_over()
 	
 	var sprite = $sprite
 	var target_rotation = self.linear_velocity.y / 2600
@@ -29,11 +29,12 @@ func _input(event):
 func _integrate_forces(state):
 	if not Global.game_state == Global.GameStates.PLAYING:
 		return
-	for i in range(state.get_contact_count()):
-		var contact_collider = state.get_contact_collider_object(i)
-		if contact_collider:
-			game_over()
-			break
+	if Global.game_state == Global.GameStates.PLAYING:
+		for i in range(state.get_contact_count()):
+			var contact_collider = state.get_contact_collider_object(i)
+			if contact_collider:
+				game_over()
+				break
 
 func show_explosion():
 	$explosion_sound.play()
@@ -49,7 +50,4 @@ func show_explosion():
 
 func game_over():
 	show_explosion()
-	if Global.is_high_score():
-		Global.game_over_save()
-	else:
-		Global.game_over()
+	Global.game_over()

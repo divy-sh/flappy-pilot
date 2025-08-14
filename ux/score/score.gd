@@ -12,3 +12,5 @@ func _process(_delta):
 		modulate.a = max(modulate.a - _delta / fade_duration, 0)
 		if modulate.a == 0:
 			visible = false
+	if Global.game_state == Global.GameStates.PLAYING:
+		$StartHint.text = ""

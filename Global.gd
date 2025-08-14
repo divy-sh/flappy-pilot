@@ -5,7 +5,6 @@ enum GameStates {
 	IDLE,
 	PLAYING,
 	OVER,
-	OVER_SAVE,
 	HIGHSCORE,
 	UNLOCK,
 	UNLOCK_PLANES,
@@ -135,7 +134,6 @@ func save():
 		save_data.high_score.append([current_score, Time.get_date_string_from_system()])
 		save_data.high_score.sort()
 		save_data.high_score.reverse()
-		print(save_data)
 	if len(save_data.high_score) > 10:
 		save_data.high_score.pop_back()
 
@@ -165,10 +163,6 @@ func game_over():
 	SPEED = 0
 	game_state = GameStates.OVER
 
-func game_over_save():
-	SPEED = 0
-	game_state = GameStates.OVER_SAVE
-
 func game_idle():
 	SPEED = -500
 	game_state = GameStates.IDLE
@@ -192,7 +186,6 @@ func unlock_planes():
 func unlock_levels():
 	SPEED = 0
 	game_state = GameStates.UNLOCK_LEVELS
-
 
 func game_playing():
 	game_state = GameStates.PLAYING

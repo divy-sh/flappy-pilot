@@ -17,11 +17,10 @@ func _menu_button_pressed():
 	get_tree().reload_current_scene()
 
 func _process(_delta):
-	if Global.game_state == Global.GameStates.OVER or Global.game_state == Global.GameStates.OVER_SAVE:
-		if Global.game_state == Global.GameStates.OVER_SAVE:
+	if Global.game_state == Global.GameStates.OVER:
+		if Global.is_high_score():
 			var gameOver = $GameOver
 			gameOver.text = "[center]HIGH SCORE![center]"
-			Global.game_over()
 		modulate.a = min(modulate.a + _delta / fade_duration, 1)
 		visible = true
 	else:
