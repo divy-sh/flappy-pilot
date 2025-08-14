@@ -27,7 +27,7 @@ z_index = 1
 [node name="menu" parent="." instance=ExtResource("4_pihm5")]
 visible = false
 
-[node name="game_over2" parent="." instance=ExtResource("5_tebrm")]
+[node name="idle" parent="." instance=ExtResource("5_tebrm")]
 visible = false
 
 [node name="high_score" parent="." instance=ExtResource("6_cxh2o")]
