@@ -23,7 +23,7 @@ func _input(event):
 	if event.is_pressed() and (Global.game_state == Global.GameStates.IDLE or 
 		Global.game_state == Global.GameStates.PLAYING):
 		Global.game_playing()
-		self.linear_velocity = Vector2(0, -1300)
+		self.linear_velocity = Vector2(0, -1400)
 		$flap_sound.play()
 
 func _integrate_forces(state):

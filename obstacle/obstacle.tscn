@@ -6,7 +6,7 @@
 [node name="obs_1" type="Node2D"]
 
 [node name="Barrel" parent="." instance=ExtResource("1_2hvkl")]
-position = Vector2(100, -160)
+position = Vector2(100, -130)
 scale = Vector2(0.6, 0.6)
 
 [node name="Barrel2" parent="Barrel" instance=ExtResource("1_2hvkl")]
@@ -19,7 +19,7 @@ position = Vector2(-1, -961)
 position = Vector2(-1.66667, -1445)
 
 [node name="Barrel2" parent="." instance=ExtResource("1_2hvkl")]
-position = Vector2(100, 800)
+position = Vector2(100, 770)
 scale = Vector2(0.6, 0.6)
 
 [node name="Barrel2" parent="Barrel2" instance=ExtResource("1_2hvkl")]

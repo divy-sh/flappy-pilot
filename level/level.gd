@@ -27,9 +27,9 @@ func spawn_obstacle():
 
 func process_obstacle_physics(delta):
 	if first and first is Node2D:
-		first.position += Vector2(Global.SPEED, 0) * delta
+		first.position += Vector2(Global.SPEED * min(2, (Global.current_score + 10) / 10.0), 0) * delta
 	if second and second is Node2D:
-		second.position += Vector2(Global.SPEED, 0) * delta
+		second.position += Vector2(Global.SPEED * min(2, (Global.current_score + 10) / 10.0), 0) * delta
 	
 	if first.position.x < -SPAWN_OFFSET:
 		first = reset_obstacle(first)
