@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://culi3om4tyr0g"]
+[gd_scene load_steps=4 format=3 uid="uid://culi3om4tyr0g"]
 
 [ext_resource type="Script" path="res://ux/game_over/game_over.gd" id="1_ed40b"]
+[ext_resource type="Texture2D" uid="uid://b835eputvqsxp" path="res://ux/assets/ButtonText_Large_Orange_Square.png" id="3_pegoc"]
 [ext_resource type="FontFile" uid="uid://bdl2dgv4b7dt0" path="res://ux/joystix.otf" id="3_y8q6e"]
 
 [node name="game_over" type="Node2D"]
@@ -35,23 +36,29 @@ scroll_active = false
 [node name="restart" type="Button" parent="."]
 offset_top = 1200.0
 offset_right = 1080.0
-offset_bottom = 1300.0
+offset_bottom = 1380.0
 focus_mode = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("3_y8q6e")
 theme_override_font_sizes/font_size = 64
 text = "restart"
+icon = ExtResource("3_pegoc")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="mainMenu" type="Button" parent="."]
 offset_top = 1400.0
 offset_right = 1080.0
-offset_bottom = 1500.0
+offset_bottom = 1580.0
 focus_mode = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("3_y8q6e")
 theme_override_font_sizes/font_size = 64
 text = "Main Menu"
+icon = ExtResource("3_pegoc")
 flat = true
+icon_alignment = 1
+expand_icon = true

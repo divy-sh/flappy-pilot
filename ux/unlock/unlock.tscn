@@ -25,14 +25,17 @@ scroll_active = false
 [node name="mainMenu" type="Button" parent="."]
 offset_top = 1600.0
 offset_right = 1080.0
-offset_bottom = 1700.0
+offset_bottom = 1780.0
 focus_mode = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_0x1rm")
 theme_override_font_sizes/font_size = 64
 text = "back"
+icon = ExtResource("3_6wdu1")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="levels" type="ScrollContainer" parent="."]
 offset_left = 40.0

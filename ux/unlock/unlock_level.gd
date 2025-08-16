@@ -27,8 +27,10 @@ func populate_list():
 		selectable.find_child("name").text = "[center]%s[/center]" % Global.save_data.levels[l].name
 		if Global.save_data.levels[l].unlocked == false:
 			selectable.find_child("unlock").text = str(Global.save_data.levels[l].cost)
+		elif Global.save_data.level.name == l:
+			selectable.find_child("unlock").text = "Active"
 		else:
-			selectable.find_child("unlock").text = "Unlocked"
+			selectable.find_child("unlock").text = "Select"
 		selectable.find_child("image").texture = load("res://background/" + 
 		Global.save_data.levels[l].name + "/logo.png")
 		
