@@ -131,7 +131,7 @@ var game_state = GameStates.MENU
 func save():
 	save_data.coins += current_score
 	if is_high_score():
-		save_data.high_score.append([current_score, Time.get_date_string_from_system()])
+		save_data.high_score.append([current_score, Time.get_datetime_string_from_system()])
 		save_data.high_score.sort()
 		save_data.high_score.reverse()
 	if len(save_data.high_score) > 10:
