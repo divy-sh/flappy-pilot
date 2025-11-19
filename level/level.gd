@@ -1,8 +1,8 @@
 extends Node2D
 
 const OBSTACLE_COUNT = 6
-var SPAWN_OFFSET = 1080
-var OBSTACLE_SWAY = 400
+var SPAWN_OFFSET = 1000
+var OBSTACLE_SWAY = 250
 
 var obstacle
 var first

@@ -12,17 +12,17 @@ enum GameStates {
 }
 
 var Levels = {
-	forest = {
-		name = "forest",
-		unlocked = true,
-		cost = 0,
-		layerCount = 7
-	},
 	desert = {
 		name = "desert",
+		unlocked = true,
+		cost = 0,
+		layerCount = 6
+	},
+	forest = {
+		name = "forest",
 		unlocked = false,
 		cost = 500,
-		layerCount = 6
+		layerCount = 7
 	},
 	skies = {
 		name = "skies",
@@ -116,7 +116,7 @@ var Vehicles = {
 var default_save_data = {
 	"high_score" = [],
 	"coins" = 0,
-	"level" = Levels.forest,
+	"level" = Levels.desert,
 	"vehicle" = Vehicles.plane_1_blue,
 	"levels" = Levels,
 	"vehicles" = Vehicles,
@@ -131,7 +131,7 @@ var game_state = GameStates.MENU
 func save():
 	save_data.coins += current_score
 	if is_high_score():
-		save_data.high_score.append([current_score, Time.get_datetime_string_from_system()])
+		save_data.high_score.append([current_score, Time.get_date_string_from_system()])
 		save_data.high_score.sort()
 		save_data.high_score.reverse()
 	if len(save_data.high_score) > 10:
