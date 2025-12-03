@@ -3,9 +3,8 @@ extends Area2D
 func _on_body_entered(_body):
 	$collect_sound.play()
 	
-	Global.current_score += 1
-	if Global.current_score >= 20:
-		Global.SPEED = -700
+	Global.score += 1
+	Global.coins += 1
 
 	$Coin.queue_free()
 	$collision.queue_free()

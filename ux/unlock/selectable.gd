@@ -10,7 +10,7 @@ func _on_unlock_pressed():
 		unlock_vehicle()
 
 func unlock_level():
-	var level = Global.Levels[selectableName]
+	var level = Const.Levels[selectableName]
 	if Global.save_data.levels[selectableName]["unlocked"] == true:
 		Global.save_data.level = level
 		Global.save()
@@ -23,7 +23,7 @@ func unlock_level():
 		get_tree().reload_current_scene()
 
 func unlock_vehicle():
-	var vehicle = Global.Vehicles[selectableName]
+	var vehicle = Const.Vehicles[selectableName]
 	if Global.save_data.vehicles[selectableName]["unlocked"] == true:
 		Global.save_data.vehicle = vehicle
 		Global.save()

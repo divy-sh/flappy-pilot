@@ -14,7 +14,7 @@ func _ready():
 	spawn_obstacle()
 	
 func _process(delta):
-	if Global.game_state == Global.GameStates.PLAYING:
+	if Global.game_state == Const.GameStates.PLAYING:
 		process_obstacle_physics(delta)
 
 func spawn_obstacle():
@@ -27,9 +27,9 @@ func spawn_obstacle():
 
 func process_obstacle_physics(delta):
 	if first and first is Node2D:
-		first.position += Vector2(Global.SPEED * min(2, (Global.current_score + 10) / 10.0), 0) * delta
+		first.position += Vector2(Global.SPEED * min(2, (Global.score + 10) / 10.0), 0) * delta
 	if second and second is Node2D:
-		second.position += Vector2(Global.SPEED * min(2, (Global.current_score + 10) / 10.0), 0) * delta
+		second.position += Vector2(Global.SPEED * min(2, (Global.score + 10) / 10.0), 0) * delta
 	
 	if first.position.x < -SPAWN_OFFSET:
 		first = reset_obstacle(first)

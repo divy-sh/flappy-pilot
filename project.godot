@@ -18,6 +18,7 @@ boot_splash/show_image=false
 [autoload]
 
 Global="*res://Global.gd"
+Const="*res://Const.gd"
 
 [display]
 

@@ -3,14 +3,15 @@ extends RigidBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.load()
-	Global.current_score = 0
+	Global.score = 0
+	Global.coins = 0
 	self.freeze = true
 	var sprite = $sprite
 	sprite.texture = load("res://plane/planes/" + 
 		Global.save_data.vehicle.name + ".png")
 
 func _process(_delta):
-	if Global.game_state == Global.GameStates.PLAYING:
+	if Global.game_state == Const.GameStates.PLAYING:
 		self.freeze = false
 		if position.y > 1200 or position.y < -800:
 			game_over()
@@ -20,16 +21,16 @@ func _process(_delta):
 	sprite.rotation = lerp_angle(sprite.rotation, target_rotation, 0.1)
 
 func _input(event):
-	if event.is_pressed() and (Global.game_state == Global.GameStates.IDLE or 
-		Global.game_state == Global.GameStates.PLAYING):
+	if event.is_pressed() and (Global.game_state == Const.GameStates.IDLE or 
+		Global.game_state == Const.GameStates.PLAYING):
 		Global.game_playing()
-		self.linear_velocity = Vector2(0, -1400)
+		self.linear_velocity = Vector2(0, -1500)
 		$flap_sound.play()
 
 func _integrate_forces(state):
-	if not Global.game_state == Global.GameStates.PLAYING:
+	if not Global.game_state == Const.GameStates.PLAYING:
 		return
-	if Global.game_state == Global.GameStates.PLAYING:
+	if Global.game_state == Const.GameStates.PLAYING:
 		for i in range(state.get_contact_count()):
 			var contact_collider = state.get_contact_collider_object(i)
 			if contact_collider:

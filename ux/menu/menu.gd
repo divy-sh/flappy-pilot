@@ -11,7 +11,7 @@ func _ready():
 	unlocks.pressed.connect(_unlocks_pressed)
 
 func _process(_delta):
-	if Global.game_state == Global.GameStates.MENU:
+	if Global.game_state == Const.GameStates.MENU:
 		modulate.a = min(modulate.a + _delta / fade_duration, 1)
 		visible = true
 	else:

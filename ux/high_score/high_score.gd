@@ -14,7 +14,7 @@ func _ready():
 	$player_names.text = date + "[/center]"
 
 func _process(_delta):
-	if Global.game_state == Global.GameStates.HIGHSCORE:
+	if Global.game_state == Const.GameStates.HIGHSCORE:
 		modulate.a = min(modulate.a + _delta / fade_duration, 1)
 		visible = true
 	else:

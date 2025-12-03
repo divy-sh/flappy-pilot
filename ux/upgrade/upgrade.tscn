@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhn08vt0xqtu4"]
+
+[ext_resource type="Script" uid="uid://dpc2she3qls6a" path="res://ux/upgrade/upgrade.gd" id="1_r3b42"]
+[ext_resource type="FontFile" uid="uid://bdl2dgv4b7dt0" path="res://ux/joystix.otf" id="2_s2n6m"]
+[ext_resource type="Texture2D" uid="uid://c2r5n1xi8r3q" path="res://ux/assets/Box_Orange_Rounded.png" id="3_fg28v"]
+[ext_resource type="PackedScene" uid="uid://bmtmb6os04u7c" path="res://coin/coin.tscn" id="4_fg28v"]
+
+[node name="score" type="Node2D"]
+script = ExtResource("1_r3b42")
+
+[node name="coin_multiplier" type="Button" parent="."]
+offset_left = 180.0
+offset_top = 1150.0
+offset_right = 480.0
+offset_bottom = 1450.0
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_s2n6m")
+theme_override_font_sizes/font_size = 48
+text = "Score
+X1
+
+10"
+icon = ExtResource("3_fg28v")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="score_multiplier" type="Button" parent="."]
+offset_left = 600.0
+offset_top = 1150.0
+offset_right = 900.0
+offset_bottom = 1450.0
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_s2n6m")
+theme_override_font_sizes/font_size = 48
+text = "Coins
+X1
+
+10"
+icon = ExtResource("3_fg28v")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Coin" parent="." instance=ExtResource("4_fg28v")]
+position = Vector2(330, 1330)
+scale = Vector2(4, 4)
+
+[node name="Coin2" parent="." instance=ExtResource("4_fg28v")]
+position = Vector2(750, 1330)
+scale = Vector2(4, 4)

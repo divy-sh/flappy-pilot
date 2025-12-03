@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8onflqa3p5wa"]
 
-[ext_resource type="Script" path="res://ux/coin_count/coin_count.gd" id="1_xp2p6"]
+[ext_resource type="Script" uid="uid://b4pokht6weppj" path="res://ux/coin_count/coin_count.gd" id="1_xp2p6"]
 [ext_resource type="FontFile" uid="uid://bdl2dgv4b7dt0" path="res://ux/joystix.otf" id="2_ijfck"]
 [ext_resource type="PackedScene" uid="uid://bmtmb6os04u7c" path="res://coin/coin.tscn" id="3_sgcro"]
 

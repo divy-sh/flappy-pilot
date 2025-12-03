@@ -8,7 +8,7 @@ func _ready():
 	populate_list()
 
 func _process(_delta):
-	if Global.game_state == Global.GameStates.UNLOCK_PLANES:
+	if Global.game_state == Const.GameStates.UNLOCK_PLANES:
 		modulate.a = min(modulate.a + _delta / fade_duration, 1)
 		visible = true
 	else:
