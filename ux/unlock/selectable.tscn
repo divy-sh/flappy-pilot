@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c2r5n1xi8r3q" path="res://ux/assets/Box_Orange_Rounded.png" id="1_nc888"]
 [ext_resource type="FontFile" uid="uid://bdl2dgv4b7dt0" path="res://ux/joystix.otf" id="2_ik0h1"]
-[ext_resource type="Script" path="res://ux/unlock/selectable.gd" id="2_tpqpt"]
+[ext_resource type="Script" uid="uid://cx2yep56qq5sp" path="res://ux/unlock/selectable.gd" id="2_tpqpt"]
 [ext_resource type="Texture2D" uid="uid://b835eputvqsxp" path="res://ux/assets/ButtonText_Large_Orange_Square.png" id="5_laad1"]
 
 [node name="selectable" type="TextureRect"]

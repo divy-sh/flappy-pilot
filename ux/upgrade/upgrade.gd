@@ -11,8 +11,21 @@ func _ready():
 	score_multiplier_button.pressed.connect(_score_multiplier_pressed)
 
 func _process(_delta):
-	coin_multiplier_button.text = "coin\nx%s\n\n%s" % [Global.save_data["coin_multiplier"], Global.get_coin_multiplier_cost()]
-	score_multiplier_button.text = "score\nx%s\n\n%s" % [Global.save_data["score_multiplier"], Global.get_score_multiplier_cost()]
+	if Global.save_data.coin_multiplier >= 30 or Global.get_coin_multiplier_cost() > Global.save_data.coins:
+		coin_multiplier_button.disabled = true
+	
+	if Global.save_data.score_multiplier >= 30 or Global.get_score_multiplier_cost() > Global.save_data.coins:
+		score_multiplier_button.disabled = true
+	
+	if Global.save_data.coin_multiplier >= 30:
+		coin_multiplier_button.text = "coin\nx%s\n\n%s" % [Global.save_data.coin_multiplier, "Max"]
+	else:
+		coin_multiplier_button.text = "coin\nx%s\n\n%s" % [Global.save_data.coin_multiplier, Global.get_coin_multiplier_cost()]
+	
+	if Global.save_data.score_multiplier >= 30:
+		coin_multiplier_button.text = "coin\nx%s\n\n%s" % [Global.save_data.score_multiplier, "Max"]
+	else:	
+		score_multiplier_button.text = "score\nx%s\n\n%s" % [Global.save_data.score_multiplier, Global.get_score_multiplier_cost()]
 
 func _coin_multiplier_pressed():
 	var cost = Global.get_coin_multiplier_cost()

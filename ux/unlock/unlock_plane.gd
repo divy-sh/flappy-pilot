@@ -27,8 +27,11 @@ func populate_list():
 		selectable.find_child("name").text = "[center]%s[/center]" % Global.save_data.vehicles[p].title
 		if Global.save_data.vehicles[p].unlocked == false:
 			selectable.find_child("unlock").text = str(Global.save_data.vehicles[p].cost)
+			if Global.save_data.vehicles[p].cost > Global.save_data.coins:
+				selectable.find_child("unlock").disabled = true
 		elif Global.save_data.vehicle.name == p:
 			selectable.find_child("unlock").text = "Active"
+			selectable.find_child("unlock").disabled = true
 		else:
 			selectable.find_child("unlock").text = "Select"
 		selectable.find_child("image").texture = load("res://plane/planes/" + 

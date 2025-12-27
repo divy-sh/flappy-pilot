@@ -6,7 +6,6 @@ var score = 0
 var coins = 0
 var game_state = Const.GameStates.MENU
 var base_cost = 10
-var multiplier = 1.1
 
 func save():
 	save_data.coins += get_coins()
@@ -72,19 +71,19 @@ func game_playing():
 	game_state = Const.GameStates.PLAYING
 
 func get_coin_multiplier_cost():
-	return snapped(pow(save_data.coin_multiplier, 3) * base_cost, 0)
+	return snapped(pow(save_data.coin_multiplier, 2) * base_cost, 0)
 
 func get_score_multiplier_cost():
-	return snapped(pow(save_data.score_multiplier, 3) * base_cost, 0)
+	return snapped(pow(save_data.score_multiplier, 2) * base_cost, 0)
 
 func increment_coin_multiplier():
-	save_data.coin_multiplier = snapped(save_data.coin_multiplier * multiplier, 0.1)
+	save_data.coin_multiplier += 1
 
 func increment_score_multiplier():
-	save_data.score_multiplier = snapped(save_data.score_multiplier * multiplier, 0.1)
+	save_data.score_multiplier += 1
 
 func get_score():
-	return snapped(score * save_data.score_multiplier, 0)
+	return score * save_data.score_multiplier
 
 func get_coins():
-	return snapped(coins * save_data.coin_multiplier, 0)
+	return coins * save_data.coin_multiplier

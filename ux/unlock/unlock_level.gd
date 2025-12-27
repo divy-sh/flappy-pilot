@@ -15,6 +15,7 @@ func _process(_delta):
 		modulate.a = max(modulate.a - _delta / fade_duration, 0)
 		if modulate.a == 0:
 			visible = false
+	
 
 func _back_button_pressed():
 	Global.unlocks()
@@ -27,8 +28,11 @@ func populate_list():
 		selectable.find_child("name").text = "[center]%s[/center]" % Global.save_data.levels[l].name
 		if Global.save_data.levels[l].unlocked == false:
 			selectable.find_child("unlock").text = str(Global.save_data.levels[l].cost)
+			if Global.save_data.levels[l].cost > Global.save_data.coins:
+				selectable.find_child("unlock").disabled = true
 		elif Global.save_data.level.name == l:
 			selectable.find_child("unlock").text = "Active"
+			selectable.find_child("unlock").disabled = true
 		else:
 			selectable.find_child("unlock").text = "Select"
 		selectable.find_child("image").texture = load("res://background/" + 

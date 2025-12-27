@@ -19,7 +19,7 @@ theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_s2n6m")
 theme_override_font_sizes/font_size = 48
 text = "Score
-X1
++1
 
 10"
 icon = ExtResource("3_fg28v")
@@ -38,7 +38,7 @@ theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_s2n6m")
 theme_override_font_sizes/font_size = 48
 text = "Coins
-X1
++1
 
 10"
 icon = ExtResource("3_fg28v")
