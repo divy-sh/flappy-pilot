@@ -35,7 +35,10 @@ func load():
 		save()
 
 	var file = FileAccess.open("user://save.cfg", FileAccess.READ)
-	save_data = file.get_var()
+	var data = file.get_var()
+	save_data = Const.default_save_data
+	for key in data:
+		save_data[key] = data[key]
 
 func game_over():
 	save()

@@ -122,4 +122,5 @@ var default_save_data = {
 	"vehicles" = Vehicles,
 	"score_multiplier" = 1,
 	"coin_multiplier" = 1,
+	"version" = 1
 }
