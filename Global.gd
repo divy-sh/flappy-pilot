@@ -38,6 +38,9 @@ func load():
 	var data = file.get_var()
 	save_data = Const.default_save_data
 	for key in data:
+		if key == "levels" or key == "vehicles":
+			continue
+
 		save_data[key] = data[key]
 
 func game_over():
